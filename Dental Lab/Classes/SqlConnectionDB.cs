@@ -22,8 +22,8 @@ namespace Dental_Lab
         {
             try
             {
-                string strconn = "Server = 160.153.162.158;Port=3306; Database = faddental; Uid = fadeldental; Password = Moderndentallab479;charset=utf8;";
-                //string strconn = "Server = localhost;Port=3306; Database = dental; Uid = root; Password =;charset=utf8;";
+                //string strconn = "Server = 160.153.162.158;Port=3306; Database = faddental; Uid = fadeldental; Password = Moderndentallab479;charset=utf8;";
+                string strconn = "Server = localhost;Port=3306; Database = dental; Uid = root; Password =;charset=utf8;";
                 connection = new MySqlConnection(strconn);
                 myCurrent_Conn = connection.ConnectionString;
             }
