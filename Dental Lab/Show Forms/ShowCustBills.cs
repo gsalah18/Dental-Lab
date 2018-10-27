@@ -160,7 +160,7 @@ namespace Dental_Lab.Show_Forms
                     " AND pay_date BETWEEN '" + FormatDate(datefrom_pic.Value) + "'" +
                     " AND '" + FormatDate(dateto_pic.Value) + "' ORDER BY pay_id DESC";
                 db.selectPaymentprint(ref data, payment_query);
-                PaymentPrintForm report = new PaymentPrintForm(data, cust_label.Text);
+                PaymentPrintForm report = new PaymentPrintForm(data, cust_label.Text, total_paid_label.Text);
                 report.Show();
 
             } else {

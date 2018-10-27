@@ -14,18 +14,22 @@ namespace Dental_Lab.PrintForms
     {
         private PaymentDataSet data;
         private string customerName;
-        public PaymentPrintForm(PaymentDataSet data, string customerName)
+        private string totalCash;
+        public PaymentPrintForm(PaymentDataSet data, string customerName, string totalCash)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             this.data = data;
             this.customerName = customerName;
+            this.totalCash = totalCash;
         }
 
         private void PaymentPrintForm_Load(object sender, EventArgs e)
         {
             paymentCrystalReport1.SetDataSource(data);
-            paymentCrystalReport1.SetParameterValue("cust_name", customerName);
-            paymentCrystalReport1.SetParameterValue("today_date", FormatDate(DateTime.Today));
+            paymentCrystalReport1.SetParameterValue("customer", customerName);
+            paymentCrystalReport1.SetParameterValue("today", FormatDate(DateTime.Today));
+            paymentCrystalReport1.SetParameterValue("total_cash", totalCash);
             crystalReportViewer1.ReportSource = paymentCrystalReport1;
         }
 
