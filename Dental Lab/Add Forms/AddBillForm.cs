@@ -20,7 +20,7 @@ namespace Dental_Lab
         private MainForm form;
         private ShowBill form2;
         private double price = 0;
-        private double checkP = 0;
+        //private double checkP = 0;
         private int warr_years=0;
         private string patient="";
         private bool[] teethes_list=null;

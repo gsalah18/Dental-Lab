@@ -48,7 +48,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
-                MessageBox.Show("");
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
@@ -67,6 +67,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("لم يتم عمل النسخه الاحطياطيه\nتاكد من الاتصال بالانترنت");
                 connection.Close();
                 return false;
@@ -86,6 +87,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("لم تتم استعاد البيانات\nتاكد من الاتصال بالانترنت");
                 connection.Close();
                 return false;
@@ -110,7 +112,8 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
-                MessageBox.Show("لم يتم جلب البيانات\nتاكد من الاتصال بالانترنت"+e);
+                Console.WriteLine(e.Message);
+                MessageBox.Show("لم يتم جلب البيانات\nتاكد من الاتصال بالانترنت");
                 connection.Close();
             }
         }// end of selectDB method
@@ -130,7 +133,28 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
-                MessageBox.Show("لم يتم جلب البيانات\nتاكد من الاتصال بالانترنت" + e);
+                Console.WriteLine(e.Message);
+                MessageBox.Show("لم يتم جلب البيانات\nتاكد من الاتصال بالانترنت" );
+                connection.Close();
+            }
+        }
+        public void selectPaymentprint(ref PaymentDataSet dataset, String SelectStatement)
+        {
+            try
+            {
+                command = new MySqlCommand();
+                command.Connection = SqlConnectionDB.connection;
+                command.CommandText = SelectStatement;
+                connection.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                adapter.Fill(dataset.DataTable1);
+                //MessageBox.Show("Correct Selection");
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                MessageBox.Show("لم يتم جلب البيانات\nتاكد من الاتصال بالانترنت" );
                 connection.Close();
             }
         }
@@ -149,7 +173,8 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
-                MessageBox.Show("لم يتم ادخال البيانات\nتاكد من الاتصال بالانترنت"+e);
+                Console.WriteLine(e.Message);
+                MessageBox.Show("لم يتم ادخال البيانات\nتاكد من الاتصال بالانترنت");
                 connection.Close();
                 return false;
             }
@@ -173,8 +198,9 @@ namespace Dental_Lab
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 connection.Close();
-                MessageBox.Show("لم يتم ادخال الشك\nتاكد من الاتصال من الانترنت"+"\n"+"او حجم الصوره كبير جدا"+"\n"+e);
+                MessageBox.Show("لم يتم ادخال الشك\nتاكد من الاتصال من الانترنت"+"\n"+"او حجم الصوره كبير جدا");
                 return false;
             }
         }
@@ -193,6 +219,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("لم يتم تحديث البنانات\nتاكد من الاتصال من الانترنت");
                 connection.Close();
                 return false;
@@ -214,6 +241,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("لم يتم الحذف\nتاكد من الاتصال من الانترنت");
                 connection.Close();
                 return false;
@@ -235,6 +263,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("لم يتم جلب الببانات\nتاكد من الاتصال بالانترنت");
                 connection.Close();
             }
@@ -255,6 +284,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("حدث خطا\nتاكد من الاتصال بالانترنت");
                 connection.Close();
             }
@@ -277,6 +307,7 @@ namespace Dental_Lab
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("حدث مشكله اثناء جلب الصوره\nتاكد من الاتصال بالانترنت");
                 return null;
             }
@@ -296,6 +327,7 @@ namespace Dental_Lab
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("حدث خطا اثناء العمليه\nتاكد من الاتصال بالانترنت");
                 connection.Close();
                 return -1;
@@ -312,6 +344,7 @@ namespace Dental_Lab
                 return test;
             }catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 MessageBox.Show("حدث خطا اثناء العمليه\nتاكد من الاتصال بالانترنت");
                 connection.Close();
                 return false;
@@ -333,6 +366,7 @@ namespace Dental_Lab
             {
                 MessageBox.Show("لم يتم اختيار التاريخ \nتاكد من الاتصال بالانترنت");
                 connection.Close();
+                Console.WriteLine(e.Message);
                 return new DateTime();
             }
         }

@@ -303,6 +303,23 @@
     <Compile Include="PrintForms\CustPrintForm.Designer.cs">
       <DependentUpon>CustPrintForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintForms\PaymentCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintForms\PaymentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrintForms\PaymentPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintForms\PaymentPrintForm.Designer.cs">
+      <DependentUpon>PaymentPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintForms\WarrCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -437,6 +454,13 @@
     <EmbeddedResource Include="PrintForms\CustPrintForm.resx">
       <DependentUpon>CustPrintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintForms\PaymentCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintForms\PaymentPrintForm.resx">
+      <DependentUpon>PaymentPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintForms\WarrCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>WarrCrystalReport.cs</LastGenOutput>
@@ -481,6 +505,17 @@
     </None>
     <None Include="PrintForms\CustBillDataSet.xss">
       <DependentUpon>CustBillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PrintForms\PaymentDataSet.xsc">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PrintForms\PaymentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PrintForms\PaymentDataSet.xss">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -548,15 +583,6 @@
     <COMReference Include="CrystalPrintControlLib">
       <Guid>{62862E3F-F35B-455E-9459-49EAADE80A25}</Guid>
       <VersionMajor>13</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="PAGEOBJECTMODELLib">
-      <Guid>{237F4BEC-8AE5-41E1-AE84-B194E4670597}</Guid>
-      <VersionMajor>14</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>

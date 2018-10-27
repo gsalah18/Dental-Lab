@@ -47,16 +47,17 @@
             this.print = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.discount_tab = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tab_container = new System.Windows.Forms.TabControl();
+            this.bills_tab = new System.Windows.Forms.TabPage();
             this.bill_girdview = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.payments_tab = new System.Windows.Forms.TabPage();
             this.payment_gridview = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.debits_tab = new System.Windows.Forms.TabPage();
             this.debits_gridview = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.discounts_tab = new System.Windows.Forms.TabPage();
             this.discount_gridview = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.add_payment_btn = new System.Windows.Forms.Button();
             this.debt_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.final_total_label = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.add_payment_btn = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -79,14 +79,14 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.discount_tab.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tab_container.SuspendLayout();
+            this.bills_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bill_girdview)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.payments_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payment_gridview)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.debits_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.debits_gridview)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.discounts_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.discount_gridview)).BeginInit();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(359, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 13);
+            this.label11.Size = new System.Drawing.Size(24, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "الى";
             // 
@@ -128,7 +128,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(582, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 13);
+            this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "من";
             // 
@@ -264,7 +264,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.discount_tab);
+            this.panel1.Controls.Add(this.tab_container);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 178);
@@ -272,30 +272,30 @@
             this.panel1.Size = new System.Drawing.Size(1350, 489);
             this.panel1.TabIndex = 5;
             // 
-            // discount_tab
+            // tab_container
             // 
-            this.discount_tab.Controls.Add(this.tabPage1);
-            this.discount_tab.Controls.Add(this.tabPage2);
-            this.discount_tab.Controls.Add(this.tabPage3);
-            this.discount_tab.Controls.Add(this.tabPage4);
-            this.discount_tab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.discount_tab.Location = new System.Drawing.Point(0, 0);
-            this.discount_tab.Name = "discount_tab";
-            this.discount_tab.RightToLeftLayout = true;
-            this.discount_tab.SelectedIndex = 0;
-            this.discount_tab.Size = new System.Drawing.Size(1350, 386);
-            this.discount_tab.TabIndex = 6;
+            this.tab_container.Controls.Add(this.bills_tab);
+            this.tab_container.Controls.Add(this.payments_tab);
+            this.tab_container.Controls.Add(this.debits_tab);
+            this.tab_container.Controls.Add(this.discounts_tab);
+            this.tab_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_container.Location = new System.Drawing.Point(0, 0);
+            this.tab_container.Name = "tab_container";
+            this.tab_container.RightToLeftLayout = true;
+            this.tab_container.SelectedIndex = 0;
+            this.tab_container.Size = new System.Drawing.Size(1350, 386);
+            this.tab_container.TabIndex = 6;
             // 
-            // tabPage1
+            // bills_tab
             // 
-            this.tabPage1.Controls.Add(this.bill_girdview);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1342, 360);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "فواتير";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.bills_tab.Controls.Add(this.bill_girdview);
+            this.bills_tab.Location = new System.Drawing.Point(4, 22);
+            this.bills_tab.Name = "bills_tab";
+            this.bills_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.bills_tab.Size = new System.Drawing.Size(1342, 360);
+            this.bills_tab.TabIndex = 0;
+            this.bills_tab.Text = "فواتير";
+            this.bills_tab.UseVisualStyleBackColor = true;
             // 
             // bill_girdview
             // 
@@ -312,16 +312,16 @@
             this.bill_girdview.Size = new System.Drawing.Size(1336, 354);
             this.bill_girdview.TabIndex = 8;
             // 
-            // tabPage2
+            // payments_tab
             // 
-            this.tabPage2.Controls.Add(this.payment_gridview);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1342, 360);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "دفعات";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.payments_tab.Controls.Add(this.payment_gridview);
+            this.payments_tab.Location = new System.Drawing.Point(4, 22);
+            this.payments_tab.Name = "payments_tab";
+            this.payments_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.payments_tab.Size = new System.Drawing.Size(1342, 360);
+            this.payments_tab.TabIndex = 1;
+            this.payments_tab.Text = "دفعات";
+            this.payments_tab.UseVisualStyleBackColor = true;
             // 
             // payment_gridview
             // 
@@ -338,15 +338,15 @@
             this.payment_gridview.Size = new System.Drawing.Size(1336, 354);
             this.payment_gridview.TabIndex = 8;
             // 
-            // tabPage3
+            // debits_tab
             // 
-            this.tabPage3.Controls.Add(this.debits_gridview);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1342, 360);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "ديون";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.debits_tab.Controls.Add(this.debits_gridview);
+            this.debits_tab.Location = new System.Drawing.Point(4, 22);
+            this.debits_tab.Name = "debits_tab";
+            this.debits_tab.Size = new System.Drawing.Size(1342, 360);
+            this.debits_tab.TabIndex = 2;
+            this.debits_tab.Text = "ديون";
+            this.debits_tab.UseVisualStyleBackColor = true;
             // 
             // debits_gridview
             // 
@@ -363,15 +363,15 @@
             this.debits_gridview.Size = new System.Drawing.Size(1342, 360);
             this.debits_gridview.TabIndex = 8;
             // 
-            // tabPage4
+            // discounts_tab
             // 
-            this.tabPage4.Controls.Add(this.discount_gridview);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1342, 360);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "خصومات";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.discounts_tab.Controls.Add(this.discount_gridview);
+            this.discounts_tab.Location = new System.Drawing.Point(4, 22);
+            this.discounts_tab.Name = "discounts_tab";
+            this.discounts_tab.Size = new System.Drawing.Size(1342, 360);
+            this.discounts_tab.TabIndex = 3;
+            this.discounts_tab.Text = "خصومات";
+            this.discounts_tab.UseVisualStyleBackColor = true;
             // 
             // discount_gridview
             // 
@@ -409,6 +409,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1350, 103);
             this.panel8.TabIndex = 5;
+            // 
+            // add_payment_btn
+            // 
+            this.add_payment_btn.Location = new System.Drawing.Point(1232, 39);
+            this.add_payment_btn.Name = "add_payment_btn";
+            this.add_payment_btn.Size = new System.Drawing.Size(75, 23);
+            this.add_payment_btn.TabIndex = 13;
+            this.add_payment_btn.Text = "اضافه دفعه";
+            this.add_payment_btn.UseVisualStyleBackColor = true;
+            this.add_payment_btn.Click += new System.EventHandler(this.add_payment_btn_Click);
             // 
             // debt_label
             // 
@@ -514,7 +524,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(114, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "التوقيع : ";
             // 
@@ -537,16 +547,6 @@
             this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "سعر الفواتير";
-            // 
-            // add_payment_btn
-            // 
-            this.add_payment_btn.Location = new System.Drawing.Point(1232, 39);
-            this.add_payment_btn.Name = "add_payment_btn";
-            this.add_payment_btn.Size = new System.Drawing.Size(75, 23);
-            this.add_payment_btn.TabIndex = 13;
-            this.add_payment_btn.Text = "اضافه دفعه";
-            this.add_payment_btn.UseVisualStyleBackColor = true;
-            this.add_payment_btn.Click += new System.EventHandler(this.add_payment_btn_Click);
             // 
             // ShowCustBills
             // 
@@ -575,14 +575,14 @@
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.discount_tab.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tab_container.ResumeLayout(false);
+            this.bills_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bill_girdview)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.payments_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.payment_gridview)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.debits_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.debits_gridview)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.discounts_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.discount_gridview)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -606,11 +606,11 @@
         private System.Windows.Forms.Button print;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl discount_tab;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabControl tab_container;
+        private System.Windows.Forms.TabPage bills_tab;
+        private System.Windows.Forms.TabPage payments_tab;
+        private System.Windows.Forms.TabPage debits_tab;
+        private System.Windows.Forms.TabPage discounts_tab;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label debt_label;
         private System.Windows.Forms.Label label9;
