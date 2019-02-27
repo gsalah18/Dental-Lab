@@ -34,8 +34,11 @@ namespace Dental_Lab.Show_Forms
         }
         private void ShowCustBills_Load(object sender, EventArgs e)
         {
-            DateTime PreMonth = DateTime.Today.AddMonths(-1);
+            DateTime PreMonth = DateTime.Today;
+            PreMonth = PreMonth.AddDays( - (PreMonth.Day -1 ));
+            DateTime nextMonth = PreMonth.AddMonths(1);
             datefrom_pic.Value = PreMonth;
+            dateto_pic.Value = nextMonth;
             RefreshData();
         }
         public void SetSale(double result,DateTime date,String discount)
@@ -190,17 +193,17 @@ namespace Dental_Lab.Show_Forms
         }
         private void Finish()
         {
-            String insert_payment="INSERT INTO payments" +
-                " (cust_id,pay_price,pay_date,pay_note,user_id) " +
-                "VALUES("+Id+" , '"+final_amount+"', '" +
-                FormatDate(datefrom_pic.Value) +
-                "' , 'تصفيه دين شهر', '"+User_id+"')";
+//            String insert_payment="INSERT INTO payments" +
+//               " (cust_id,pay_price,pay_date,pay_note,user_id) " +
+//                "VALUES("+Id+" , '"+final_amount+"', '" +
+//                FormatDate(datefrom_pic.Value) +
+//                "' , 'تصفيه دين شهر', '"+User_id+"')";
 
             String insert_debit="INSERT INTO debits (cust_id,deb_price,deb_date,user_id)" +
                 " VALUES('"+Id+"', '"+final_amount+"', " +
                 FormatDate(dateto_pic.Value)+", '"+User_id+"')";
 
-            if (db.insertDB(insert_payment) && db.insertDB(insert_debit))
+            if (db.insertDB(insert_debit))
             {
                 //this.Close();
             }
