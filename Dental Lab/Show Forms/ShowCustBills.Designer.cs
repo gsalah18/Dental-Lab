@@ -71,6 +71,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -119,7 +120,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(359, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 13);
+            this.label11.Size = new System.Drawing.Size(23, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "الى";
             // 
@@ -128,7 +129,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(582, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 13);
+            this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "من";
             // 
@@ -390,6 +391,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.add_payment_btn);
             this.panel8.Controls.Add(this.debt_label);
             this.panel8.Controls.Add(this.label9);
@@ -524,7 +526,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(114, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "التوقيع : ";
             // 
@@ -547,6 +549,16 @@
             this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "سعر الفواتير";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(854, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "جرد جساب";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ShowCustBills
             // 
@@ -633,5 +645,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker datefrom_pic;
         private System.Windows.Forms.Button add_payment_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

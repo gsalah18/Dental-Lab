@@ -169,8 +169,7 @@ namespace Dental_Lab.Show_Forms
             } else {
                 if (MessageBox.Show("هل تريد الطباعه؟", "تاكيد الطباعه", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
-
+                    Finish();
                     CustBillDataSet data = new CustBillDataSet();
                     string teethe_query = "SELECT " +
                         "COALESCE(GROUP_CONCAT(t.number SEPARATOR ','),'مثبت') " +
@@ -186,7 +185,6 @@ namespace Dental_Lab.Show_Forms
                     CustPrintForm report = new CustPrintForm(data, total.Text, cust_label.Text
                         , total_paid_label.Text, sale_label.Text
                         , final_total_label.Text, debt_label.Text);
-                    Finish();
                     report.Show();
                 }
             }
@@ -200,8 +198,8 @@ namespace Dental_Lab.Show_Forms
 //                "' , 'تصفيه دين شهر', '"+User_id+"')";
 
             String insert_debit="INSERT INTO debits (cust_id,deb_price,deb_date,user_id)" +
-                " VALUES('"+Id+"', '"+final_amount+"', " +
-                FormatDate(dateto_pic.Value)+", '"+User_id+"')";
+                " VALUES('"+Id+"', '"+final_amount+"', '" +
+                FormatDateForDB(dateto_pic.Value.AddDays(1))+"', '"+User_id+"')";
 
             if (db.insertDB(insert_debit))
             {
@@ -229,6 +227,11 @@ namespace Dental_Lab.Show_Forms
         {
             return today.Year + "/" + today.Month + "/" + today.Day;
         }
+        private string FormatDateForDB(DateTime today)
+        {
+            return today.Year + "-" + today.Month + "-" + today.Day;
+        }
+
 
         private void datefrom_pic_ValueChanged(object sender, EventArgs e)
         {
@@ -248,6 +251,14 @@ namespace Dental_Lab.Show_Forms
         private void add_payment_btn_Click(object sender, EventArgs e)
         {
             new AddPaymentForm(this, datefrom_pic.Value);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد جرد الحساب؟", "تاكيد جرد حساب", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Finish();
+            }
         }
     }
 }
